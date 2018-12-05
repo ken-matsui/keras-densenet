@@ -21,12 +21,12 @@ FLAGS = flags.FLAGS
 
 def main(_):
     # input image dimensions
-    img_rows, img_cols = 400, 400
+    img_rows, img_cols = 300, 300
     # Images are RGB.
     img_channels = 3
 
     # channel last -> (~/.keras/keras.json)
-    # TODO: DenseNet.LastDense.activation = sigmoid
+    # TODO: DenseNet.LastDense(using classes).activation = sigmoid
     model = DenseNet121(input_shape=(img_rows, img_cols, img_channels),
                         weights=None, classes=1)  # Binary classification
     plot_model(model, to_file='model.png', show_shapes=True)
