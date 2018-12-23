@@ -34,7 +34,7 @@ function binarize() {
     cv.addWeighted(rgbaPlanes.get(2), 0.5, rgbaPlanes.get(1), 0.5, 0, dst);
     cv.adaptiveThreshold(dst, dst, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY_INV, 9, 10);
     cv.morphologyEx(dst, dst, cv.MORPH_OPEN, kernel);
-    cv.resize(dst, dst, new cv.Size(250, 250));
+    cv.resize(dst, dst, new cv.Size(256, 256));
 
     cv.imshow('canvas-output', dst);
 
@@ -47,7 +47,7 @@ function binarize() {
 
 function getImageData() {
     const drawElement = document.getElementById('canvas-output');
-    const inputWidth = inputHeight = 250;
+    const inputWidth = inputHeight = 256;
     let imageData = drawElement.getContext('2d').getImageData(0, 0, inputWidth, inputHeight);
     return imageData;
 }
