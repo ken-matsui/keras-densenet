@@ -31,7 +31,7 @@ def upload_multipart():
     file_path = os.path.join(UPLOAD_DIR, filename)
     file.save(file_path)
 
-    img_rows, img_cols = 250, 250
+    img_rows, img_cols = 256, 256
     img_channels = 1
 
     img = cv2.imread(file_path, cv2.IMREAD_COLOR)
